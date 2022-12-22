@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import ItemRepo from '../components/ItemRepo';
 import { api } from '../services/api';
 
+
 import { Container } from './styles';
 
 function App() {
@@ -26,16 +27,13 @@ function App() {
         setCurrentRepo('')
         return
       }
-
     }
-    alert('Repositório não encontrado')
+    alert('Repositório não encontrado ou duplicado')
 
   }
 
   const handleRemoveRepo = (id) => {
-    console.log('Removendo registro', id);
-
-    // utilizar filter.
+    setRepos(repos.filter(repo => repo.id !== id))
   }
 
 
